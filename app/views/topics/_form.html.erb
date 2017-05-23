@@ -1,0 +1,21 @@
+<%= form_for(@topic) do |f| %>
+  <% if @topic.errors.any? %>
+    <div id="error_explanation">
+      # バリデーションエラーの件数を表示します。
+      <h2><%= @topic.errors.count %>件のエラーがあります。</h2>
+
+      <ul>
+      <% @topic.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= f.label :内容 %>
+  <%= f.text_field :content,class: 'form-control input-lg' %>
+  <br>
+  <%= f.submit'投稿',class:'btn btn-primary btn-sm active' %>
+<% end %>
+
+<%= link_to "ブログ一覧画面にもどる", topics_path %>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Nyanbook</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+   <header>
+        <img class="logo" src="<%= asset_path "facebook.png" %>">
+      <ul>
+      <li><a href="#">マイページ</a></li>
+      <li><%= link_to "トップページ", new_topic_path %></li>
+      <li><a href="#">ログイン</a></li>
+    </ul> 
+    </header>
+
+<%= yield %>
+　　<footer>
+    <p>運営会社Yamaneko株式会社</p>
+    <p>© 2015-2016 Copyright Yamaneko Corp.</p>
+  　</footer>
+
+</body>
+</html>
