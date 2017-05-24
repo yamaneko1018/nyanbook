@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
 
+  devise_for :users
   resources :topics,only:[:index, :new, :create, :edit, :update, :destroy]
 
   get 'topics' => "topics#index"
-  root 'top#index'
+  root 'topics#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

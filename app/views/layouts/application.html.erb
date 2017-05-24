@@ -11,10 +11,15 @@
    <header>
         <img class="logo" src="<%= asset_path "facebook.png" %>">
       <ul>
-      <li><a href="#">マイページ</a></li>
       <li><%= link_to "トップページ", new_topic_path %></li>
-      <li><a href="#">ログイン</a></li>
-    </ul> 
+        <% if user_signed_in? %>
+        <li><%= link_to 'マイページ', edit_user_registration_path %></li>
+          <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
+        <% else %>
+          <li><%= link_to 'ログイン', new_user_session_path  %></li>
+          <li><%= link_to 'サインアップ', new_user_registration_path %></li>
+        <% end %>    
+       </ul> 
     </header>
 
 <%= yield %>
