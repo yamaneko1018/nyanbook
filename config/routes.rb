@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
-  devise_for :users
-  resources :topics,only:[:index, :new, :create, :edit, :update, :destroy]
+devise_for :users
+  resources :topics,only:[:index, :new, :create, :edit, :update, :destroy, :show]
 
   get 'topics' => "topics#index"
   root 'topics#index'

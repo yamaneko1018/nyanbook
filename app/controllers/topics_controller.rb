@@ -33,6 +33,10 @@ class TopicsController < ApplicationController
     redirect_to topics_path, notice:"削除しました"
   end
   
+  def show
+    @topic = Topic.find(params[:id])
+  end
+  
   private
    def topics_params
      params.require(:topic).permit(:content)
