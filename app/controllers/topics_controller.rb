@@ -1,10 +1,15 @@
 class TopicsController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_topic,only:[:edit, :update, :destroy]
+  before_action :set_topic,only:[:edit, :update, :destroy,:show]
   
   def index
     @topics = Topic.all
+     respond_to do |format|
+    format.html
+    format.js
+    end
   end
+
   
   def new
     @topic = Topic.new
@@ -34,7 +39,8 @@ class TopicsController < ApplicationController
   end
   
   def show
-    @topic = Topic.find(params[:id])
+    @comment = @topic.comments.build
+    @comments = @topic.comments
   end
   
   private
@@ -45,4 +51,4 @@ class TopicsController < ApplicationController
    def set_topic
      @topic = Topic.find(params[:id])
    end
-end
+ end
