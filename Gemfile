@@ -48,3 +48,7 @@ end
 gem 'twitter-bootstrap-rails'
 gem 'devise'
 gem 'faker'
+
+group :development do
+  gem 'letter_opener_web'
+end
