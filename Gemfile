@@ -52,3 +52,7 @@ gem 'faker'
 group :development do
   gem 'letter_opener_web'
 end
+
+gem 'omniauth'
+gem 'omniauth-twitter'
+gem 'omniauth-facebook'
