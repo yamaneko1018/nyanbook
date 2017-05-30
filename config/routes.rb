@@ -1,19 +1,23 @@
 Rails.application.routes.draw do
 
 
+
+
 devise_for :users, controllers:{
   omniauth_callbacks:"users/omniauth_callbacks"
 }
   resources :topics,only:[:index, :new, :create, :edit, :update, :destroy, :show]
-  
+
   resources :topics do
     resources :comments
     post :confirm, on: :collection
   end
 
+  resources :users,only:[:index]
+
   get 'topics' => "topics#index"
   root 'top#index'
-  
+
   if Rails.env.development?
   mount LetterOpenerWeb::Engine, at: "/letter_opener"
 end
