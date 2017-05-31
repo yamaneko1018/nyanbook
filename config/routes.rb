@@ -3,6 +3,10 @@ Rails.application.routes.draw do
 
 
 
+  get 'relationships/create'
+
+  get 'relationships/destroy'
+
 devise_for :users, controllers:{
   omniauth_callbacks:"users/omniauth_callbacks"
 }
@@ -14,6 +18,7 @@ devise_for :users, controllers:{
   end
 
   resources :users,only:[:index]
+  resources :relationships, only: [:create, :destroy]
 
   get 'topics' => "topics#index"
   root 'top#index'
