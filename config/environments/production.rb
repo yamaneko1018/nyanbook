@@ -77,7 +77,7 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 
-config.action_mailer.default_url_options = { host: 'fierce-mesa-23923.herokuapp.com/' }
+config.action_mailer.default_url_options = { host: 'stormy-harbor-44189.herokuapp.com/' }
   ActionMailer::Base.delivery_method = :smtp
 ActionMailer::Base.smtp_settings =
 {
