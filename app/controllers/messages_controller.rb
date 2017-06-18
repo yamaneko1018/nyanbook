@@ -1,6 +1,7 @@
 class MessagesController < ApplicationController
   before_action do
    @conversation = Conversation.find(params[:conversation_id])
+ end
   def index
     @messages = @conversation.messages
  if @messages.length > 10
@@ -20,7 +21,7 @@ class MessagesController < ApplicationController
  end
 
  @message = @conversation.messages.build
-  end
+end
 
   def create
     @message = @conversation.messages.build(message_params)
