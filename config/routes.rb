@@ -1,12 +1,5 @@
 Rails.application.routes.draw do
 
-
-
-
-  get 'relationships/create'
-
-  get 'relationships/destroy'
-
 devise_for :users, controllers:{
   registrations: "users/registrations",
   omniauth_callbacks:"users/omniauth_callbacks"
@@ -18,8 +11,11 @@ devise_for :users, controllers:{
     post :confirm, on: :collection
   end
 
-  resources :users,only:[:index]
+  resources :users,only:[:index,:show]
   resources :relationships, only: [:create, :destroy]
+  resources :conversations do
+    resources :messages
+  end
 
   get 'topics' => "topics#index"
   root 'top#index'
