@@ -25,7 +25,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
-
+gem 'therubyracer', platforms: :ruby
 # Use Unicorn as the app server
 # gem 'unicorn'
 
@@ -43,6 +43,11 @@ group :development, :test do
   gem 'spring'
   gem 'pry-rails'
   gem 'better_errors'
+  gem 'capistrano', '3.6.0'
+ gem 'capistrano-bundler'
+ gem 'capistrano-rails'
+ gem 'capistrano-rbenv'
+ gem 'capistrano3-unicorn'
 end
 
 gem 'twitter-bootstrap-rails'
@@ -62,3 +67,5 @@ gem 'mailgun_rails'
 gem 'carrierwave'
 gem 'rmagick'
 gem 'fog'
+gem 'dotenv-rails'
+gem 'unicorn'
