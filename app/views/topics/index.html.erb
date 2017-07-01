@@ -6,13 +6,15 @@
     <%= link_to "投稿", new_topic_path, class: 'btn btn-default' %>
     <br>
     <% @topics.each do |topic| %>
+
     <div class="row">
       <br>
-      <h3><%=topic.user.name %></h3>
-      <p><%= profile_img(topic.user) %></p>
+      <h3><%=topic.user.name if topic.user %></h3>
+
        <%= link_to topic_path(topic) do %>
         <% end %>
      <p>本文: <%= link_to topic.content,topic_path(topic.id) %></p>
+     <%= image_tag topic.imageurl,:class => "image_url" %>
     <%= link_to "編集", edit_topic_path(topic.id),class: 'btn btn-primary btn-sm active' %>
     <%= link_to "削除",topic_path(topic.id), method: :delete, data:{
     confirm: "本当に削除していいですか?"},class: 'btn btn-primary btn-sm active' %>

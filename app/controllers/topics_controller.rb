@@ -46,7 +46,7 @@ class TopicsController < ApplicationController
 
   private
    def topics_params
-     params.require(:topic).permit(:content)
+     params.require(:topic).permit(:content,:imageurl, :imageurl_cache)
    end
 
    def set_topic
