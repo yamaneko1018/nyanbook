@@ -17,7 +17,8 @@ while n <= 10
                name: name,
                password: password,
                provider: provider,
-               uid: uid
+               uid: uid,
+               id: n
                )
 n = n + 1
 end
@@ -25,7 +26,8 @@ end
 n = 1
 while n <= 10
     Topic.create(content: "夏だね",
-                 user_id: n
+                 user_id: n,
+                 id: n
     )
     n = n + 1
 end
@@ -33,8 +35,9 @@ end
 n = 1
 while n <= 10
   Comment.create(content: "いいね！",
+                 user_id: n,
                  topic_id: n,
-                 user_id: n
+                 id: n
   )
 n = n + 1
 end
