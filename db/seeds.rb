@@ -24,11 +24,11 @@ end
 
 n = 1
 while n <= 10
-      Topic.create(content: "夏だね",
-                    user_id: n
+    Topic.create(content: "夏だね",
+                 user_id: n
     )
     n = n + 1
-    end
+end
 
 n = 1
 while n <= 10
