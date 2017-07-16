@@ -21,7 +21,7 @@
 end
 @user_ids = User.ids
 @topic_ids = Topic.ids
-40.times do
+10.times do
   content = "いいね！"
   topic_id = 163
   user_id = @user_ids.sample
@@ -35,7 +35,7 @@ end
 
 
  @user_ids = User.ids
- 2.times do
+ 10.times do
 
    content = "あああああ"
    user_id = @user_ids.sample
