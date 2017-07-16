@@ -22,20 +22,55 @@ while n <= 10
 n = n + 1
 end
 
-# n = 1
-# while n <= 10
-#   Comment.create(content: "いいね！",
-#                  topic_id: n,
-#                  user_id: n
+n = 1
+while n <= 10
+      Topic.create(content: "夏だね",
+                    user_id: n
+    )
+    n = n + 1
+    end
+
+n = 1
+while n <= 10
+  Comment.create(content: "いいね！",
+                 topic_id: n,
+                 user_id: n
+  )
+n = n + 1
+end
+
+
+  #  topic.remote_imageurl_url = "https://robohash.org/sintnobiset.png?size=300x300&set=set1"
+
+# 10.times do |n|
+#  name = Faker::Name.name
+#  email = Faker::Internet.email
+#  uid = Faker::Omniauth.facebook
+#  provider  = Faker::Omniauth.facebook
+#  User.create(
+#  name: name,
+#  email: email,
+#  provider: provider,
+#  uid: uid
 #   )
-# n = n + 1
 # end
 
 # n = 1
 # while n <= 10
-#       Topic.create(content: "夏だね",
-#                     user_id: n
-#     )
-#   #  topic.remote_imageurl_url = "https://robohash.org/sintnobiset.png?size=300x300&set=set1"
+# content = “hoge”
+# Topic.create(
+#  content: content,
+#  user_id: n
+#  )
 #  n = n + 1
-#  end
+# end
+#
+# n = 1
+# while n <= 10
+# Comment.create(
+#  content: “huge”,
+#  user_id: n,
+#  topic_id: n
+#  )
+#  n = n + 1
+# end
