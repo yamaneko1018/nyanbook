@@ -7,44 +7,33 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 10.times do |n|
   email = Faker::Internet.email
-  password = Faker::Internet.password
+  password = "password"
   name = Faker::Name.name
-  uid = Faker::Internet.email
-
-  User.create!(email: email,
+  uid = Faker::Omniauth.facebook
+  provider = Faker::Omniauth.facebook
+   User.create(
+               email: email,
                name: name,
                password: password,
-               password_confirmation: password,
-               uid: uid,
-               id: n
+               provider: provider,
+               uid: uid
                )
 end
-@user_ids = User.ids
-@topic_ids = Topic.ids
-10.times do
-  content = "いいね！"
-  topic_id = 163
-  user_id = @user_ids.sample
-  Comment.create!(content: content,
-                 topic_id: topic_id,
-                 user_id: user_id,
+
+n = 1
+while n <= 10
+  Comment.create(content: "いいね！",
+                 topic_id: n,
+                 user_id: n
   )
+n = n + 1
 end
 
-
-
-
- @user_ids = User.ids
- 10.times do
-
-   content = "あああああ"
-   user_id = @user_ids.sample
-   topic = Topic.create!(
-
-                content: content,
-                 user_id: user_id,
-
-   )
-   topic.remote_imageurl_url = "https://robohash.org/sintnobiset.png?size=300x300&set=set1"
- topic.save
+n = 1
+while n <= 10
+      Topic.create(content: "夏だね",
+                    user_id: n
+    )
+  #  topic.remote_imageurl_url = "https://robohash.org/sintnobiset.png?size=300x300&set=set1"
+ n = n + 1
  end
