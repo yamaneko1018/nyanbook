@@ -5,7 +5,8 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-10.times do |n|
+n = 1
+while n <= 10
   email = Faker::Internet.email
   password = "password"
   name = Faker::Name.name
@@ -18,22 +19,23 @@
                provider: provider,
                uid: uid
                )
+n = n+1
 end
 
-n = 1
-while n <= 10
-  Comment.create(content: "いいね！",
-                 topic_id: n,
-                 user_id: n
-  )
-n = n + 1
-end
+# n = 1
+# while n <= 10
+#   Comment.create(content: "いいね！",
+#                  topic_id: n,
+#                  user_id: n
+#   )
+# n = n + 1
+# end
 
-n = 1
-while n <= 10
-      Topic.create(content: "夏だね",
-                    user_id: n
-    )
-  #  topic.remote_imageurl_url = "https://robohash.org/sintnobiset.png?size=300x300&set=set1"
- n = n + 1
- end
+# n = 1
+# while n <= 10
+#       Topic.create(content: "夏だね",
+#                     user_id: n
+#     )
+#   #  topic.remote_imageurl_url = "https://robohash.org/sintnobiset.png?size=300x300&set=set1"
+#  n = n + 1
+#  end
