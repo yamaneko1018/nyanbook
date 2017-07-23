@@ -27,8 +27,13 @@ end
     @message = @conversation.messages.build(message_params)
   if @message.save
     redirect_to conversation_messages_path(@conversation)
+  else
+  # bodyが空でvalidatesがfalseになりsaveに失敗した場合、
+  # flashにエラーメッセージを入れてmessage一覧画面へリダイレクトさせる。
+   redirect_to conversation_messages_path(@conversation), flash: {error: "メッセージを入力して下さい。"}
   end
   end
+
   private
   def message_params
     params.require(:message).permit(:body, :user_id)
