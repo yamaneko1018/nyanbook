@@ -51,5 +51,9 @@ class TopicsController < ApplicationController
 
    def set_topic
      @topic = Topic.find(params[:id])
+     if @topic.user_id != current_user.id
+        redirect_to root_path, alert: "通報しました。"
+        return
+    end
    end
  end

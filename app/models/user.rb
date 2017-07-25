@@ -4,11 +4,12 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable,:omniauthable,:confirmable
     mount_uploader :avatar, AvatarUploader
-    mount_uploader :imageurl, ImageurlUploader
+    mount_uploader :image_url, ImageurlUploader
 
 
   has_many :topics, dependent: :destroy
   has_many :comments, dependent: :destroy
+  has_many :messages,dependent: :destroy
 
   has_many :relationships, foreign_key: "follower_id", dependent: :destroy
   has_many :reverse_relationships, foreign_key: "followed_id", class_name: "Relationship", dependent: :destroy
