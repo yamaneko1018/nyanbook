@@ -13,9 +13,9 @@
    case Rails.env
      when 'production'
        config.fog_directory = 'nyanbook-production2'
-       config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/nyanbook-production'
+       config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/nyanbook-production2'
      when 'development'
        config.fog_directory = 'nyanbook-development2'
-       config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/nyanbook-development'
+       config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/nyanbook-development2'
    end
  end
